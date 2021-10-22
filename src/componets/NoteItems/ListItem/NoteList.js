@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import NoteCard from './NoteCard'
-import { ListGroup, ListGroupItem } from 'reactstrap';
-import { Table } from 'reactstrap';
 class NoteList extends Component {
     constructor(props) {
         super(props);
@@ -23,7 +21,7 @@ class NoteList extends Component {
         return (
             <div className="container">{
                 this.state.notes.map(note => (
-                <NoteCard title={note.title} date={note.date} content={note.content} key={note.id} />
+                <NoteCard title={note.title} date={note.date} content={note.content} key={note.id} id={note.id} />
             ))
             }
             </div>
