@@ -1,18 +1,6 @@
 {
   "notes": [
     {
-      "id": 4,
-      "title": "3 Note",
-      "content": "psum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
-      "date": "12/02/2000"
-    },
-    {
-      "id": 5,
-      "title": "5 Note",
-      "content": "psum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
-      "date": "12/02/2000"
-    },
-    {
       "id": 6,
       "title": "6 Note",
       "content": "psum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, ",
