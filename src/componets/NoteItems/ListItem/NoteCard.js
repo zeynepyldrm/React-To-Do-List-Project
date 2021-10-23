@@ -11,7 +11,7 @@ class NoteCard extends Component {
         this.state = {
             show: false
         },
-        this.showModal = this.showModal.bind(this);
+            this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
 
     }
@@ -85,11 +85,20 @@ class NoteCard extends Component {
                 </div>
                 <div className="card-body">
                     <h5 className="card-title">{this.props.title}</h5>
-                    <p className="card-text">{this.props.content}</p> 
-                    <UpdateModal show={this.state.show} handleClose={this.hideModal} date={this.props.date} content={this.props.content} title={this.props.title}/>
-                    <button type="button" onClick={this.showModal}>Open</button>
-                   
-                    
+                    <p className="card-text">{this.props.content}</p>
+                    <UpdateModal
+                        show={this.state.show}
+                        handleClose={this.hideModal}
+                        date={this.props.date}
+                        content={this.props.content}
+                        title={this.props.title}
+                        id={this.props.id}
+                    />
+                    <button type="button" className="btn btn-info btn-md" onClick={this.showModal}>
+                        <i class="fa fa-edit"></i>
+                    </button>
+
+
                     <button className="btn btn-danger" type="button" onClick={() => {
                         this.DelNote(this.props.id)
                     }}><i className="fa fa-trash"></i></button>

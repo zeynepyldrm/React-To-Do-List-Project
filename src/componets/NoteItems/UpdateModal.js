@@ -1,5 +1,6 @@
+import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import { useState } from "react";
 const modalStyle = {
     modal: {
         position: "fixed",
@@ -30,7 +31,29 @@ const modalStyle = {
 }
 
 
-const UpdateModal = ({ handleClose, show, children ,date,content,title}) => {
+
+const UpdateModal = ({ handleClose, show, children, date, content, title, id }) => {
+
+    var [date, setDate] = useState(date);
+    var [content, setContent] = useState(content);
+    var [title, setTitle] = useState(title);
+
+    var notes={
+        date:date,
+        content:content,
+        title:title
+    }
+
+    const saveUpdateNote =() => {
+        const baseURL = "http://localhost:3333/notes"
+        axios.put(`${baseURL}/${id}`,notes)
+        alert("updated notes")
+        notes=null
+        window.location.reload();
+
+
+    }
+
 
     let showHideClassName = show ? 'displayblock' : 'displaynone';
     if (showHideClassName == 'displayblock') showHideClassName = modalStyle.displayblock
@@ -51,22 +74,30 @@ const UpdateModal = ({ handleClose, show, children ,date,content,title}) => {
                         <form>
                             <div className="form-group">
                                 <label for="recipient-name" className="col-form-label">Title:</label>
-                                <input type="text" className="form-control" id="recipient-name" value={title}></input>
+                                <input type="text" className="form-control" id="recipient-name"
+                                    value={notes.title}
+                                    onChange={e => setTitle(e.target.value)}
+                                />
                             </div>
                             <div className="form-group">
                                 <label for="recipient-name" className="col-form-label">Date:</label>
-                                <input type="text" className="form-control" id="recipient-name" value={date} />
+                                <input type="text" className="form-control" id="recipient-name"
+                                    value={notes.date} onChange={e => setDate(e.target.value)}
+                                />
                             </div>
                             <div className="form-group">
                                 <label for="message-text" className="col-form-label">Content:</label>
-                                <textarea className="form-control" id="message-text" value={content}></textarea>
+                                <textarea className="form-control" id="message-text"
+                                    value={notes.content}
+                                    onChange={e => setContent(e.target.value)}
+                                />
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick={handleClose}>Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-primary" onClick={saveUpdateNote}>Save</button>
                 </div>
             </section>
         </div>
