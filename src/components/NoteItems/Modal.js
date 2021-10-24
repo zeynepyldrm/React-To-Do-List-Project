@@ -7,7 +7,7 @@ const modalStyle = {
         width: "100%",
         height: "100%",
         background: "#000000",
-        opacity: "1"
+        opacity: "0.95"
     },
 
     displayblock: {
@@ -33,7 +33,7 @@ var notes = {
 
 
 
-const Modal = ({ handleClose, show, children, date, content, title, id, saveNote }) => {
+const Modal = ({ handleClose, show, children, date, content, title, id, saveNote,titleModal }) => {
 
     var [date, setDate] = useState(date);
     var [content, setContent] = useState(content);
@@ -54,13 +54,14 @@ const Modal = ({ handleClose, show, children, date, content, title, id, saveNote
 
     // <div className={`${Object.keys(showHideClassName)[0]}` + `${Object.values(showHideClassName)[0]}`}>
     console.log("modala geldi" + showHideClassName);
+
     let concatModalCss = Object.assign({}, modalStyle.modal, showHideClassName);
     return (
         <div style={concatModalCss}>
             <div style={modalStyle.modalMain}>
                 <div className="modal-content">
                     <div className="modal-header" style={{backgroundColor:"#dfdce6"}}>
-                        <h5 className="modal-title" style={{textAlign:"center"}}>Update Note</h5>
+                        <h5 className="modal-title" style={{textAlign:"center"}}>{titleModal}</h5>
                     </div>
                     <div className="modal-body">
                         <form>

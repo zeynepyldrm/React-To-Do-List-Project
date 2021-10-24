@@ -19,6 +19,7 @@ const AddNote = ({ handleClose, id,show}) => {
         title={""}
         id={id}
         saveNote={saveNewNote}
+        titleModal={"Add Note"}
         />
     )
 

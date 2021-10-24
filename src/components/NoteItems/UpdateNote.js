@@ -24,6 +24,7 @@ const UpdateModal = ({ handleClose, show, children, date, content, title, id}) =
         title={title}
         id={id}
         saveNote={saveUpdateNote}
+        titleModal="Update Note"
         />
     )
 

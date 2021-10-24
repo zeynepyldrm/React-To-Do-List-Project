@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
 import Nav from './components/Nav';
+import Footer from './components/Footer';
 import NoteList from './components/NoteItems/NoteList';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 
@@ -13,6 +14,7 @@ export default class App extends Component {
           <Nav />
           <Route path="/" component={NoteList} />
           <Route path="/notesList" component={NoteList} />
+          <Footer/>
         </div>
       </BrowserRouter>
 
