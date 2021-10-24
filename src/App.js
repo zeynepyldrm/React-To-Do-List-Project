@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
-import Nav from './componets/Nav';
-import NoteList from './componets/NoteItems/ListItem/NoteList';
+import Nav from './components/Nav';
+import NoteList from './components/NoteItems/NoteList';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 export default class App extends Component {

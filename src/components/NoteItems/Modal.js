@@ -1,5 +1,3 @@
-import axios from "axios";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 const modalStyle = {
     modal: {
@@ -30,28 +28,22 @@ const modalStyle = {
     }
 }
 
+var notes = {
+}
 
 
-const UpdateModal = ({ handleClose, show, children, date, content, title, id }) => {
+
+const Modal = ({ handleClose, show, children, date, content, title, id, saveNote }) => {
 
     var [date, setDate] = useState(date);
     var [content, setContent] = useState(content);
     var [title, setTitle] = useState(title);
 
-    var notes={
-        date:date,
-        content:content,
-        title:title
-    }
-
-    const saveUpdateNote =() => {
-        const baseURL = "http://localhost:3333/notes"
-        axios.put(`${baseURL}/${id}`,notes)
-        alert("updated notes")
-        notes=null
-        window.location.reload();
-
-
+    notes = {
+        id: id,
+        date: date,
+        content: content,
+        title: title
     }
 
 
@@ -65,10 +57,10 @@ const UpdateModal = ({ handleClose, show, children, date, content, title, id }) 
     let concatModalCss = Object.assign({}, modalStyle.modal, showHideClassName);
     return (
         <div style={concatModalCss}>
-            <section style={modalStyle.modalMain}>
+            <div style={modalStyle.modalMain}>
                 <div className="modal-content">
-                    <div className="modal-header">
-                        <h5 className="modal-title" id="exampleModalLabel">Update Note</h5>
+                    <div className="modal-header" style={{backgroundColor:"#dfdce6"}}>
+                        <h5 className="modal-title" style={{textAlign:"center"}}>Update Note</h5>
                     </div>
                     <div className="modal-body">
                         <form>
@@ -97,12 +89,13 @@ const UpdateModal = ({ handleClose, show, children, date, content, title, id }) 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick={handleClose}>Close</button>
-                    <button type="button" class="btn btn-primary" onClick={saveUpdateNote}>Save</button>
+                    <button type="button" class="btn btn-primary" onClick={saveNote}>Save</button>
                 </div>
-            </section>
+            </div>
         </div>
     )
 
 
 }
-export default UpdateModal;
+
+export { Modal, notes };

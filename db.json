@@ -1,10 +1,22 @@
 {
   "notes": [
     {
-      "date": "20/02/2000",
-      "content": "birth day",
-      "title": "important note",
-      "id": 6
+      "date": "12/12/2014",
+      "content": "Coding zzz",
+      "title": "Coding",
+      "id": 1
+    },
+    {
+      "date": "Today",
+      "content": " is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when ",
+      "title": "read book",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "date": "15/12/2017",
+      "content": " is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when ",
+      "title": "listen music-2"
     }
   ]
 }
