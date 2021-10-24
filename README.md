@@ -1,4 +1,4 @@
-# Getting Started with To Do List Projects
+# Getting Started with To Do List Project
 
 An application created with React, JavaScript and CSS to add, delete, update and track notes according to user preference.
 

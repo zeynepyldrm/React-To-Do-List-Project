@@ -2,21 +2,27 @@
   "notes": [
     {
       "id": 1,
-      "date": "12/12/2014",
-      "content": "provides a pair of custom React hooks that allow your React components to interact with the Redux store.",
-      "title": "Coding"
-    },
-    {
       "date": "Today",
-      "content": " is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when ",
-      "title": "read book",
-      "id": 2
+      "content": "enjoy coding ",
+      "title": "Coding React 2"
     },
     {
-      "date": "12/11/2014",
-      "content": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. ",
-      "title": "oop course ",
-      "id": 4
+      "date": "15/05/2022",
+      "content": "Evengy Grinko",
+      "title": "Music ",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "date": "12/12/2012",
+      "content": "peter pan",
+      "title": "read book 2"
+    },
+    {
+      "date": "",
+      "content": "",
+      "title": "sagtse",
+      "id": 5
     }
   ]
 }

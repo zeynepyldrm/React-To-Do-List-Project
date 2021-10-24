@@ -4,7 +4,11 @@ import UpdateNote from './UpdateNote'
 import React, { Component } from 'react'
 
 import axios from "axios";
+
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom';
+
 class NoteCard extends Component {
     constructor(props) {
         super(props);
@@ -13,8 +17,22 @@ class NoteCard extends Component {
         },
             this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
+        this.notify = this.notify.bind(this);
 
     }
+
+    notify = () => {
+
+        toast.configure({
+            hideProgressBar: true,
+            progressClassName
+        })
+        toast.warn("Notes Deleted", setTimeout(() => window.location.reload(), 1500))
+
+
+
+    }
+
     DelNote = (id) => {
 
         console.log("function çalıştı");
@@ -25,12 +43,11 @@ class NoteCard extends Component {
                 note = response.data
                 if (note != null) {
                     axios.delete(`${baseURL}/${id}`)
-                        .then(() => {
-                            alert("Note deleted!");
-                            window.location.reload();
-                            note = null
-                        }
-                    )
+
+                    this.notify()
+
+                    note = null;
+
                 }
                 else {
                     console.log("null value")
@@ -39,7 +56,7 @@ class NoteCard extends Component {
 
 
 
-    
+
 
     }
 
@@ -56,8 +73,8 @@ class NoteCard extends Component {
         //const sendUpdateNote;
         return (
 
-            <div className="card" style={{ marginBottom: "20px",position:"static"}}>{this.props.key}
-                <div className="card-header" style={{backgroundColor:"#dfdce6"}}>{this.props.date}
+            <div className="card" style={{ marginBottom: "20px", position: "static" }}>{this.props.key}
+                <div className="card-header" style={{ backgroundColor: "#dfdce6" }}>{this.props.date}
                 </div>
                 <div className="card-body">
                     <h5 className="card-title">{this.props.title}</h5>

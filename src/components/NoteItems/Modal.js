@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import NoteList from "./NoteList";
 const modalStyle = {
     modal: {
         position: "fixed",
@@ -33,7 +36,7 @@ var notes = {
 
 
 
-const Modal = ({ handleClose, show, children, date, content, title, id, saveNote,titleModal }) => {
+const Modal = ({ handleClose, show, children, date, content, title, id, saveNote, titleModal }) => {
 
     var [date, setDate] = useState(date);
     var [content, setContent] = useState(content);
@@ -44,6 +47,14 @@ const Modal = ({ handleClose, show, children, date, content, title, id, saveNote
         date: date,
         content: content,
         title: title
+    }
+
+    const notify = () => {
+        saveNote()
+        toast.configure({
+            hideProgressBar: true,
+        })
+        toast.success(titleModal,setTimeout(() => {window.location.reload()}, 1500))
     }
 
 
@@ -60,8 +71,8 @@ const Modal = ({ handleClose, show, children, date, content, title, id, saveNote
         <div style={concatModalCss}>
             <div style={modalStyle.modalMain}>
                 <div className="modal-content">
-                    <div className="modal-header" style={{backgroundColor:"#dfdce6"}}>
-                        <h5 className="modal-title" style={{textAlign:"center"}}>{titleModal}</h5>
+                    <div className="modal-header" style={{ backgroundColor: "#dfdce6" }}>
+                        <h5 className="modal-title" style={{ textAlign: "center" }}>{titleModal}</h5>
                     </div>
                     <div className="modal-body">
                         <form>
@@ -90,7 +101,7 @@ const Modal = ({ handleClose, show, children, date, content, title, id, saveNote
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick={handleClose}>Close</button>
-                    <button type="button" class="btn btn-primary" onClick={saveNote}>Save</button>
+                    <button type="button" class="btn btn-primary" onClick={notify}>Save</button>
                 </div>
             </div>
         </div>
