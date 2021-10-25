@@ -4,7 +4,7 @@
       "id": 1,
       "date": "Today",
       "content": "enjoy coding ",
-      "title": "Coding React 2"
+      "title": "Coding React"
     },
     {
       "date": "15/05/2022",
@@ -16,13 +16,7 @@
       "id": 4,
       "date": "12/12/2012",
       "content": "peter pan",
-      "title": "read book 2"
-    },
-    {
-      "date": "",
-      "content": "",
-      "title": "sagtse",
-      "id": 5
+      "title": "read book "
     }
   ]
 }

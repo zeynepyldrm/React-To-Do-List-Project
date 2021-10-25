@@ -2,12 +2,9 @@
 
 import UpdateNote from './UpdateNote'
 import React, { Component } from 'react'
-
 import axios from "axios";
-
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import { Link } from 'react-router-dom';
 
 class NoteCard extends Component {
     constructor(props) {
@@ -15,7 +12,7 @@ class NoteCard extends Component {
         this.state = {
             show: false
         },
-            this.showModal = this.showModal.bind(this);
+        this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
         this.notify = this.notify.bind(this);
 
@@ -25,9 +22,9 @@ class NoteCard extends Component {
 
         toast.configure({
             hideProgressBar: true,
-            progressClassName
+           
         })
-        toast.warn("Notes Deleted", setTimeout(() => window.location.reload(), 1500))
+        toast.warn("Notes Deleted", setTimeout(() => window.location.reload(), 1000))
 
 
 
@@ -53,11 +50,6 @@ class NoteCard extends Component {
                     console.log("null value")
                 }
             })
-
-
-
-
-
     }
 
     showModal = () => {

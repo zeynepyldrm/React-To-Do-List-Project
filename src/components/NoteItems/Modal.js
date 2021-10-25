@@ -54,7 +54,7 @@ const Modal = ({ handleClose, show, children, date, content, title, id, saveNote
         toast.configure({
             hideProgressBar: true,
         })
-        toast.success(titleModal,setTimeout(() => {window.location.reload()}, 1500))
+        toast.success(titleModal,setTimeout(() => {window.location.reload()}, 1000))
     }
 
 
